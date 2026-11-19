@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERVIÇOS DE ENFERMAGEM • ANRC - Anjos da Noite Resgate e Cursos</title>
+  <link rel="icon" type="image/png" href="assets/img/logopag.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800;900&family=Syne:wght@700;800;900;950&display=swap" rel="stylesheet">
+  <style>
+    
+    :root {
+      --bg-dark: #07090e;
+      --bg-surface: #0c111a;
+      --bg-card: #111827;
+      --red-primary: #E50914;
+      --red-glow: rgba(229, 9, 20, 0.4);
+      --blue-accent: #0284c7;
+      --blue-glow: rgba(2, 132, 199, 0.35);
+      --text-white: #ffffff;
+      --text-muted: #94a3b8;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Syne', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      font-family: var(--font-main);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; transition: all 0.25s ease; }
+
+    /* HEADER */
+    .page-top-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 9, 14, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 24px;
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .header-logo-img {
+      height: 40px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.2));
+    }
+    .header-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .header-nav-links .nav-item {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.3px;
+    }
+    .header-nav-links .nav-item:hover {
+      color: #fff;
+    }
+    .btn-top-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      transition: all 0.25s ease;
+    }
+    .btn-top-whatsapp:hover {
+      background: #10b981;
+      color: #000;
+      transform: translateY(-1px);
+    }
+
+    /* HERO DEDICADO */
+    .dedicated-hero {
+      position: relative;
+      padding: 70px 24px 60px;
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.7) 0%, rgba(7, 9, 14, 1) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+    .dedicated-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(ellipse at center, rgba(229, 9, 20, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(229, 9, 20, 0.12);
+      border: 1px solid rgba(229, 9, 20, 0.45);
+      color: #f87171;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4.5vw, 50px);
+      font-weight: 950;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero-title span {
+      color: var(--red-primary);
+    }
+    .hero-subtitle {
+      font-size: 16px;
+      color: #cbd5e1;
+      line-height: 1.65;
+      margin-bottom: 28px;
+      max-width: 620px;
+    }
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .stat-val {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .stat-lbl {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    .btn-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red-primary);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 16px 28px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px var(--red-glow);
+      transition: all 0.25s ease;
+    }
+    .btn-cta-primary:hover {
+      background: #ff1a26;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(229, 9, 20, 0.6);
+    }
+    .btn-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 16px 24px;
+      border-radius: 12px;
+      transition: all 0.25s ease;
+    }
+    .btn-cta-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* HERO MEDIA COL */
+    .hero-media-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      background: #000;
+    }
+    .hero-media-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .hero-media-card:hover .hero-media-img {
+      transform: scale(1.03);
+    }
+    .hero-media-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(7,9,14,0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+    }
+    .hero-media-seal {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,0,0,0.7);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #7dd3fc;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 8px;
+      backdrop-filter: blur(8px);
+      width: fit-content;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    .page-main-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 70px 24px 100px;
+    }
+    .section-block {
+      margin-bottom: 70px;
+    }
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--red-primary);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.3px;
+      margin-bottom: 16px;
+    }
+    .section-heading span { color: var(--red-primary); }
+    .section-lead {
+      color: #cbd5e1;
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 800px;
+      margin-bottom: 36px;
+    }
+
+    /* GRID DE MÓDULOS / ESCOPO */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .module-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .module-card:hover {
+      border-color: rgba(229, 9, 20, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+    .module-num {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--red-primary);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .module-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .module-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* DESTAQUES TÁTICOS (CALLOUT) */
+    .tactical-callout {
+      background: linear-gradient(135deg, rgba(229,9,20,0.08) 0%, rgba(2,132,199,0.08) 100%);
+      border: 1px solid rgba(229, 9, 20, 0.3);
+      border-radius: 20px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .callout-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .callout-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .callout-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(229, 9, 20, 0.15);
+      border: 1px solid rgba(229, 9, 20, 0.3);
+      color: #f87171;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .callout-text h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .callout-text p {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* CTA BOX BOTTOM */
+    .cta-banner-box {
+      background: #0f172a;
+      border: 1px solid rgba(229, 9, 20, 0.4);
+      border-radius: 24px;
+      padding: 48px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .cta-banner-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(229, 9, 20, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-banner-title {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 950;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .cta-banner-sub {
+      color: #cbd5e1;
+      font-size: 15px;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* FOOTER */
+    .page-footer {
+      background: #040609;
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 24px 30px;
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-logo {
+      height: 44px;
+      width: auto;
+      margin-bottom: 16px;
+    }
+    .footer-desc {
+      color: var(--text-muted);
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .footer-badge-reg {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: #38bdf8;
+      letter-spacing: 1px;
+    }
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .footer-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-menu li a {
+      color: var(--text-muted);
+      font-size: 13.5px;
+    }
+    .footer-menu li a:hover {
+      color: var(--red-primary);
+    }
+    .footer-contact-col p {
+      color: var(--text-muted);
+      font-size: 13.5px;
+      margin-bottom: 8px;
+    }
+    .footer-contact-col strong {
+      color: #fff;
+    }
+    .btn-footer-back {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--red-primary);
+      font-weight: 700;
+      font-size: 13.5px;
+    }
+    .footer-bottom-copy {
+      max-width: 1240px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 24px;
+      text-align: center;
+      color: #64748b;
+      font-size: 12px;
+      font-family: var(--font-mono);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+      .hero-media-img {
+        height: 320px;
+      }
+      .header-nav-links {
+        display: none;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+  
+  </style>
+</head>
+<body>
+
+  
+  <!-- HEADER OPERACIONAL ANRC -->
+  <header class="page-top-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo-link" title="Voltar para a Página Inicial">
+        <img src="assets/img/LOGO.png" alt="ANRC APH - Anjos da Noite Resgate e Cursos" class="header-logo-img">
+      </a>
+      <nav class="header-nav-links">
+        <a href="index.html" class="nav-item">← Início</a>
+        <a href="index.html#servicos" class="nav-item">Serviços & Cursos</a>
+        <a href="index.html#reciclagem" class="nav-item">Reciclagem</a>
+        <a href="index.html#quem-somos" class="nav-item">Quem Somos</a>
+        <a href="index.html#contato" class="nav-item">Contato</a>
+      </nav>
+      <div class="header-action">
+        <a href="https://wa.me/5584988934945?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20atividades%20da%20ANRC." target="_blank" rel="noopener noreferrer" class="btn-top-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>Plantão 24h</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO DEDICADO -->
+  <section class="dedicated-hero">
+    <div class="hero-container">
+      <div class="hero-text-col">
+        <span class="hero-badge-pill">ATENDIMENTO DOMICILIAR • HOME CARE & EMAD</span>
+        <h1 class="hero-title">SERVIÇOS DE <span>ENFERMAGEM</span></h1>
+        <p class="hero-subtitle">Assistência técnica em saúde domiciliar com enfermagem continuada, curativos complexos, reabilitação geriátrica, administração segura de medicamentos e procedimentos especializados no conforto da sua residência.</p>
+
+        <div class="hero-stats-row">
+          
+          <div class="stat-box">
+            <div class="stat-val">HOME CARE</div>
+            <div class="stat-lbl">Atendimento</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val">6H / 12H / 24H</div>
+            <div class="stat-lbl">Plantões</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val">COREN ATIVO</div>
+            <div class="stat-lbl">Profissionais</div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/5584988934945?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20Servi%C3%A7os%20de%20Enfermagem%20%2F%20Home%20Care%20da%20ANRC." target="_blank" rel="noopener noreferrer" class="btn-cta-primary">
+            <span>Falar com Coordenação ➔</span>
+          </a>
+          <a href="index.html#servicos" class="btn-cta-secondary">
+            <span>← Outros Serviços</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-media-card">
+        <img src="assets/img/home care.jpeg" alt="SERVIÇOS DE ENFERMAGEM" class="hero-media-img" loading="lazy">
+        <div class="hero-media-overlay">
+          <span class="hero-media-seal">🛡️ ENFERMEIROS E TÉCNICOS REGISTRADOS NO COREN</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO PRINCIPAL -->
+  <main class="page-main-wrap">
+
+    <!-- VISÃO GERAL -->
+    <section class="section-block">
+      <div class="section-eyebrow">METODOLOGIA & OPERAÇÃO</div>
+      <h2 class="section-heading">PADRÃO DE EXCELÊNCIA <span>ANRC</span></h2>
+      <p class="section-lead">A assistência domiciliar da ANRC promove a recuperação clínica e o bem-estar do paciente sem a frieza do ambiente hospitalar. Nossa equipe atua sob supervisão constante de enfermeiros responsáveis técnicos, elaborando planos de cuidado individuais para pós-operatórios, idosos, pacientes crônicos ou com mobilidade reduzida.</p>
+
+      <div class="tactical-callout">
+        <div class="callout-row">
+          
+          <div class="callout-item">
+            <div class="callout-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="callout-text">
+              <h4>Supervisão Técnica Continuada</h4>
+              <p>Enfermeiro RT visita periodicamente a residência para reavaliar a evolução do paciente e ajustar condutas.</p>
+            </div>
+          </div>
+          <div class="callout-item">
+            <div class="callout-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="callout-text">
+              <h4>Humanização e Respeito</h4>
+              <p>Profissionais treinados para proporcionar dignidade, conforto e tranquilidade para o paciente e sua família.</p>
+            </div>
+          </div>
+          <div class="callout-item">
+            <div class="callout-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="callout-text">
+              <h4>Planos Flexíveis</h4>
+              <p>Atendimentos pontuais por procedimento avulso ou contratação mensal de escalas diurnas/noturnas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRADE OU ESCOPO COMPLETO -->
+    <section class="section-block">
+      <div class="section-eyebrow">PROGRAMAÇÃO & DETALHES</div>
+      <h2 class="section-heading">MÓDULOS & <span>CAPACITAÇÃO TÁTICA</span></h2>
+      <p class="section-lead">Cada etapa foi minuciosamente formulada para garantir segurança absoluta, técnica refinada e conformidade técnica irrestrita.</p>
+
+      <div class="modules-grid">
+        
+        <div class="module-card">
+          <span class="module-num">SERVIÇO 01</span>
+          <h3 class="module-title">Plantões de Enfermagem (6h, 12h e 24h)</h3>
+          <p class="module-desc">Acompanhamento continuado por técnicos de enfermagem para auxílio em higiene, alimentação, mobilização no leito e controle rigoroso de sinais.</p>
+        </div>
+        <div class="module-card">
+          <span class="module-num">SERVIÇO 02</span>
+          <h3 class="module-title">Tratamento Avançado de Feridas</h3>
+          <p class="module-desc">Avaliação especializada e curativos com coberturas tecnológicas para lesões por pressão (escaras), úlceras venosas e feridas pós-cirúrgicas.</p>
+        </div>
+        <div class="module-card">
+          <span class="module-num">SERVIÇO 03</span>
+          <h3 class="module-title">Administração de Medicamentos</h3>
+          <p class="module-desc">Aplicação segura de antibioticoterapia endovenosa (EV), intramuscular (IM), subcutânea (SC) e hidratação com controle de infusão.</p>
+        </div>
+        <div class="module-card">
+          <span class="module-num">SERVIÇO 04</span>
+          <h3 class="module-title">Sondagens e Cuidados com Ostomias</h3>
+          <p class="module-desc">Passagem e manutenção de sonda vesical de demora/alívio, sonda nasoenteral/nasogástrica e cuidados com traqueostomia e colostomia.</p>
+        </div>
+        <div class="module-card">
+          <span class="module-num">SERVIÇO 05</span>
+          <h3 class="module-title">Cuidados Pós-Operatórios Imediatos</h3>
+          <p class="module-desc">Apoio especializado após cirurgias ortopédicas, plásticas e gerais com controle de dor, prevenção de trombose e vigilância de drenos.</p>
+        </div>
+        <div class="module-card">
+          <span class="module-num">SERVIÇO 06</span>
+          <h3 class="module-title">Acompanhamento e Reabilitação Geriátrica</h3>
+          <p class="module-desc">Estímulo cognitivo e motor seguro para idosos, prevenção de quedas domiciliares e suporte aos familiares e cuidadores.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER DE CONVERSÃO / CONTATO -->
+    <section class="cta-banner-box">
+      <h2 class="cta-banner-title">PRONTO PARA AGIR COM OS MELHORES?</h2>
+      <p class="cta-banner-sub">
+        Fale diretamente com nossa equipe operacional pelo WhatsApp oficial <strong>(84) 9 8893-4945</strong> para tirar dúvidas, solicitar visitas técnicas ou efetivar sua matrícula.
+      </p>
+      <a href="https://wa.me/5584988934945?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20Servi%C3%A7os%20de%20Enfermagem%20%2F%20Home%20Care%20da%20ANRC." target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="font-size:16px; padding: 18px 36px;">
+        <span>Conversar no WhatsApp Agora ➔</span>
+      </a>
+    </section>
+
+  </main>
+
+  
+  <!-- FOOTER OPERACIONAL ANRC -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <img src="assets/img/LOGO.png" alt="ANRC APH" class="footer-logo">
+        <p class="footer-desc">
+          ANRC • Anjos da Noite Resgate e Cursos. Centro de formação profissional tática e operações em saúde de emergência homologado nacionalmente.
+        </p>
+        <div class="footer-badge-reg">HOMOLOGAÇÃO OFICIAL • LEI 11.901 & DIRETRIZES AHA</div>
+      </div>
+      <div class="footer-links-col">
+        <div class="footer-col-title">Páginas Dedicadas</div>
+        <ul class="footer-menu">
+          <li><a href="curso-bombeiro-civil.html">Curso de Bombeiro Civil</a></li>
+          <li><a href="curso-socorrista.html">Curso de Socorrista</a></li>
+          <li><a href="transporte-pacientes.html">Transporte de Pacientes</a></li>
+          <li><a href="assistencia-eventos.html">Assistência em Eventos</a></li>
+          <li><a href="servicos-enfermagem.html">Serviços de Enfermagem</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-col">
+        <div class="footer-col-title">Central Operacional</div>
+        <p>Telefone / WhatsApp: <strong>(84) 9 8893-4945</strong></p>
+        <p>Atendimento 24h para emergências, plantões e contratações corporativas.</p>
+        <a href="index.html" class="btn-footer-back">← Voltar à Página Principal</a>
+      </div>
+    </div>
+    <div class="footer-bottom-copy">
+      © 2026 ANRC - Anjos da Noite Resgate e Cursos. Todos os direitos reservados.
+    </div>
+  </footer>
+
+</body>
+</html>
