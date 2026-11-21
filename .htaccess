@@ -1,5 +1,35 @@
 DirectoryIndex index.html site.html
 AddDefaultCharset UTF-8
+Options -Indexes
+
+# Bloqueia acesso a arquivos e diretórios sensíveis
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^\.git - [F,L]
+
+  # Força redirecionamento para HTTPS (exceto localhost)
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:[0-9]+)?$ [NC]
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<FilesMatch "^(\.htaccess|\.git.*|README\.md)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Cabeçalhos de Segurança HTTP
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
 
 <IfModule mod_expires.c>
   ExpiresActive On

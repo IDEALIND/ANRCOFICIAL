@@ -737,55 +737,217 @@
       font-weight: 900;
     }
 
-    .iq-btn-whatsapp-result {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: #ffffff;
+    .iq-pricing-summary {
+      background: rgba(8, 15, 29, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    .iq-pricing-summary-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .iq-pricing-kicker {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: #facc15;
+      text-transform: uppercase;
+    }
+
+    .iq-pricing-regular {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .iq-pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .iq-pricing-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    .iq-pricing-box.highlight {
+      background: rgba(245, 185, 53, 0.08);
+      border-color: rgba(245, 185, 53, 0.35);
+    }
+
+    .iq-pricing-method {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .iq-pricing-val {
       font-family: var(--font-display);
       font-size: 15px;
       font-weight: 900;
-      letter-spacing: 0.5px;
+      color: #ffffff;
+    }
+
+    .iq-pricing-box.highlight .iq-pricing-val {
+      color: #facc15;
+    }
+
+    .iq-pricing-sub {
+      display: block;
+      font-size: 10.5px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .iq-dual-courses-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .iq-dual-course-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .iq-dual-course-card h4 {
+      font-family: var(--font-display);
+      font-size: 13.5px;
+      font-weight: 900;
       text-transform: uppercase;
-      padding: 16px 28px;
-      border-radius: var(--radius-pill);
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .iq-dual-course-card p {
+      font-size: 12px;
+      color: #cbd5e1;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .iq-result-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .iq-dual-actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .iq-btn-primary-result {
+      width: 100%;
+      background: linear-gradient(135deg, var(--red-primary) 0%, #b91c1c 100%);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #ffffff;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      padding: 16px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 10px 26px rgba(229, 9, 20, 0.42);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+    }
+
+    .iq-btn-primary-result:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(229, 9, 20, 0.58);
+    }
+
+    .iq-btn-primary-result.is-socorrista {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      box-shadow: 0 10px 26px rgba(2, 132, 199, 0.4);
+    }
+
+    .iq-btn-primary-result.is-socorrista:hover {
+      box-shadow: 0 14px 32px rgba(2, 132, 199, 0.56);
+    }
+
+    .iq-btn-whatsapp-result {
+      width: 100%;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      font-family: var(--font-display);
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      padding: 15px 22px;
+      border-radius: 12px;
       text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin-bottom: 12px;
-      box-shadow: 0 10px 26px rgba(16, 185, 129, 0.4);
-      transition: all 0.25s;
+      box-shadow: 0 10px 24px rgba(16, 185, 129, 0.35);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
     }
 
     .iq-btn-whatsapp-result:hover {
-      filter: brightness(1.15);
+      filter: brightness(1.1);
       transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba(16, 185, 129, 0.6);
+      box-shadow: 0 14px 32px rgba(16, 185, 129, 0.52);
     }
 
     .iq-btn-restart {
-      background: none;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #94a3b8;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #cbd5e1;
       font-family: var(--font-mono);
       font-size: 11.5px;
       font-weight: 700;
       padding: 10px 20px;
-      border-radius: var(--radius-pill);
+      border-radius: 999px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       transition: all 0.2s;
     }
 
     .iq-btn-restart:hover {
-      border-color: #fff;
-      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      color: #ffffff;
     }
 
     @media (max-width: 768px) {
-      .iq-intro-careers-grid {
+      .iq-intro-careers-grid,
+      .iq-pricing-grid,
+      .iq-dual-courses-grid,
+      .iq-dual-actions-grid {
         grid-template-columns: 1fr;
       }
 
@@ -11357,7 +11519,7 @@
           <span>MATRICULE-SE AGORA</span>
         </a>
         <a href="https://wa.me/5584988934945?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20ANRC%20e%20gostaria%20de%20tirar%20d%C3%BAvidas."
-          target="_blank" class="btn-mobile-nav-whatsapp">
+          target="_blank" rel="noopener noreferrer" class="btn-mobile-nav-whatsapp">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -11912,47 +12074,7 @@
           </div>
         </div>
 
-        <!-- TELA 3: CAPTAÇÃO DE LEAD -->
-        <div class="iq-view" id="iqViewLead">
-          <div style="text-align:center; max-width:540px; margin:0 auto;">
-            <div
-              style="width:52px; height:52px; border-radius:50%; background:rgba(239,68,68,0.12); border:1.5px solid rgba(239,68,68,0.4); display:inline-flex; align-items:center; justify-content:center; margin-bottom:12px; color:#ef4444;">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <circle cx="12" cy="12" r="6" />
-                <circle cx="12" cy="12" r="2" />
-              </svg>
-            </div>
-            <h3 class="iq-lead-title">QUESTIONÁRIO CONCLUÍDO!</h3>
-            <p class="iq-lead-subtitle">
-              Seu mapeamento foi processado. Informe seu nome e WhatsApp para visualizar seu parecer vocacional
-              completo:
-            </p>
-
-            <form id="iqLeadForm" onsubmit="return false;" style="text-align:left;">
-              <div class="iq-form-group">
-                <label class="iq-form-label" for="iqInputName">Seu Nome Completo:</label>
-                <input type="text" id="iqInputName" class="iq-form-input" placeholder="Ex: Lucas Martins" required>
-                <span class="iq-error-msg" id="iqErrName">Por favor, digite seu nome completo.</span>
-              </div>
-
-              <div class="iq-form-group">
-                <label class="iq-form-label" for="iqInputPhone">Seu WhatsApp (com DDD):</label>
-                <input type="tel" id="iqInputPhone" class="iq-form-input" placeholder="(84) 9 8893-4945" maxlength="15"
-                  required>
-                <span class="iq-error-msg" id="iqErrPhone">Por favor, digite um WhatsApp válido.</span>
-              </div>
-
-              <button type="submit" class="iq-btn-start-cta" id="iqBtnSubmitLead" style="margin-top:20px;">
-                <span>GERAR MEU DIAGNÓSTICO PROFISSIONAL</span>
-                <span>➔</span>
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <!-- TELA 4: PROCESSANDO TELEMETRIA -->
+        <!-- TELA 3: PROCESSANDO TELEMETRIA -->
         <div class="iq-view" id="iqViewAnalyzing">
           <div class="iq-analyzing-box">
             <div class="iq-radar-spinner"></div>
@@ -11965,12 +12087,12 @@
           </div>
         </div>
 
-        <!-- TELA 5: RESULTADO DOSSIER -->
+        <!-- TELA 4: RESULTADO DOSSIER -->
         <div class="iq-view" id="iqViewResult">
           <div class="iq-result-card" id="iqResultCard">
 
             <div class="iq-result-header-row">
-              <span class="iq-candidate-tag" id="iqResCandidateTag">CANDIDATO(A): NOME</span>
+              <span class="iq-candidate-tag" id="iqResCandidateTag">DIAGNÓSTICO VOCACIONAL • ANRC</span>
               <span style="font-family:var(--font-mono); font-size:10px; color:#10b981; font-weight:800;">● PARECER
                 CONCLUÍDO</span>
             </div>
@@ -12008,40 +12130,54 @@
               </ul>
             </div>
 
+            <!-- Valores Oficiais do Curso Indicado (Esquenta Black) -->
+            <div class="iq-pricing-summary" id="iqPricingSummary"></div>
+
             <!-- Botões de Ação: Matrícula Imediata ou WhatsApp -->
-            <div style="display:flex; flex-direction:column; gap:10px; margin-top:18px;">
-              <button type="button" class="btn-checkout-submit" id="iqBtnEnrollNow" onclick="enrollFromQuizResult()"
-                style="margin:0; width:100%; justify-content:center; box-shadow:0 8px 24px rgba(229,9,20,0.4);">
-                <span class="btn-sub-lock">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
+            <div class="iq-result-actions">
+              <div id="iqSingleActionWrap">
+                <a href="curso-bombeiro-civil.html#matricula" class="iq-btn-primary-result" id="iqBtnEnrollNow">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                   </svg>
-                </span>
-                <span class="btn-sub-text" id="iqBtnEnrollText">MATRICULAR-SE NO CURSO INDICADO (R$ 1.000,00)</span>
-                <span class="btn-sub-arrow">➔</span>
-              </button>
+                  <span id="iqBtnEnrollText">MATRICULAR-SE EM BOMBEIRO CIVIL • PIX R$ 2.738,96</span>
+                  <span>➔</span>
+                </a>
+              </div>
 
-              <a href="#" class="iq-btn-whatsapp-result" id="iqBtnWhatsappConversion" target="_blank">
+              <div id="iqDualActionWrap" class="iq-dual-actions-grid" style="display:none;">
+                <a href="curso-bombeiro-civil.html#matricula" class="iq-btn-primary-result">
+                  <span>BOMBEIRO CIVIL • PIX R$ 2.738,96</span>
+                  <span>➔</span>
+                </a>
+                <a href="curso-socorrista.html#matricula" class="iq-btn-primary-result is-socorrista">
+                  <span>SOCORRISTA APH • PIX R$ 1.493,98</span>
+                  <span>➔</span>
+                </a>
+              </div>
+
+              <a href="#" class="iq-btn-whatsapp-result" id="iqBtnWhatsappConversion" target="_blank"
+                rel="noopener noreferrer">
                 <span style="display:inline-flex; align-items:center; justify-content:center;">
                   <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
                     <path
                       d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                   </svg>
                 </span>
-                <span>TIRAR DÚVIDAS COM A COORDENAÇÃO NO WHATSAPP</span>
+                <span>FALAR COM A COORDENAÇÃO NO WHATSAPP</span>
                 <span>➔</span>
               </a>
             </div>
 
             <!-- Botão Refazer -->
-            <div style="text-align:center; margin-top:14px;">
-              <button class="iq-btn-restart" id="iqBtnRestart">
+            <div style="text-align:center; margin-top:16px;">
+              <button type="button" class="iq-btn-restart" id="iqBtnRestart">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
                 </svg>
-                <span>REFAZER MAPEAMENTO</span>
+                <span>REFAZER TESTE VOCACIONAL</span>
               </button>
             </div>
 
@@ -15002,7 +15138,7 @@
 
         <div class="contact-pills-stack">
           <a href="https://wa.me/5584988934945?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20inscri%C3%A7%C3%B5es%20na%20ANRC."
-            target="_blank" class="contact-info-pill">
+            target="_blank" rel="noopener noreferrer" class="contact-info-pill">
             <span class="icon" style="display:inline-flex; align-items:center;">
               <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -15047,7 +15183,7 @@
         </div>
 
         <a href="https://wa.me/5584988934945?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20minha%20inscri%C3%A7%C3%A3o%20na%20ANRC."
-          target="_blank" class="btn-contact-whatsapp">
+          target="_blank" rel="noopener noreferrer" class="btn-contact-whatsapp">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -15115,7 +15251,7 @@
 
   <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/5584988934945?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas%20da%20ANRC."
-    target="_blank" class="floating-whatsapp-trigger" title="Falar no WhatsApp"
+    target="_blank" rel="noopener noreferrer" class="floating-whatsapp-trigger" title="Falar no WhatsApp"
     aria-label="Abrir WhatsApp Oficial da ANRC">
     <svg width="30" height="30" fill="#ffffff" viewBox="0 0 24 24">
       <path
@@ -15326,4 +15462,32 @@
               <div
                 style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: #94a3b8; letter-spacing: 1px; text-transform: uppercase;">
                 Resumo da Solicitação</div>
-... [truncated for diff preview]
+              <div id="recSummaryCourse" style="font-size: 14px; font-weight: 700; color: #ffffff; margin-top: 2px;">
+                Reciclagem de Socorrista (APH)</div>
+            </div>
+            <div id="recSummaryPrice" style="font-family: var(--font-display); font-size: 18px; font-weight: 900; color: #10b981;">
+              R$ 459,97</div>
+          </div>
+
+          <button type="submit" class="btn-checkout-submit" style="width: 100%; justify-content: center; margin-top: 16px;">
+            <span class="btn-sub-text">ENVIAR SOLICITAÇÃO DE RECICLAGEM</span>
+            <span class="btn-sub-arrow">➔</span>
+          </button>
+        </form>
+
+        <div id="reciclagemSuccessView" style="display: none; text-align: center; padding: 24px 12px;">
+          <h4 style="font-family: var(--font-display); font-size: 18px; font-weight: 800; color: #10b981; margin-bottom: 8px;">
+            SOLICITAÇÃO REGISTRADA!</h4>
+          <div id="recSuccessProtocolBox" style="font-family: var(--font-mono); font-size: 12px; color: #cbd5e1; margin-bottom: 16px;"></div>
+          <button type="button" class="btn-course-learn" onclick="closeReciclagemModal()" style="margin: 0 auto;">
+            <span>FECHAR</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
